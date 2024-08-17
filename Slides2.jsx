@@ -5,7 +5,7 @@ import './index.css';
 function Slides() {
   // Array of strings to display
   const textArray = [
-    "debu 🫵",
+    "debu🫵",
 ];
 
   // State to track the current index of the text array
