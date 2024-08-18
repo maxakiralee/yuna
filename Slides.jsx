@@ -47,15 +47,24 @@ function Slides() {
     "your beautiful mind 🦍🦍",
     "Thats all! 🤠",
     "See you soon beautiful",
-];
+  ];
 
   // State to track the current index of the text array
   const [currentIndex, setCurrentIndex] = useState(0);
+  
+  // State to track if the Next button is disabled
+  const [isNextDisabled, setIsNextDisabled] = useState(false);
 
   // Handler for the Next button
   const handleNext = () => {
+    if (isNextDisabled) return; // Do nothing if the button is disabled
+
     setCurrentIndex((prevIndex) => {
       if (prevIndex < textArray.length - 1) {
+        setIsNextDisabled(true); // Disable button
+        setTimeout(() => {
+          setIsNextDisabled(false); // Re-enable button after delay
+        }, 1000); // 500ms delay
         return prevIndex + 1;
       } else {
         return prevIndex;
@@ -81,7 +90,7 @@ function Slides() {
       </p>
       <div className={style.buttonContainer}>
         <button className={style.button} onClick={handleBack} disabled={currentIndex === 0}>Back</button>
-        <button className={style.button} onClick={handleNext} disabled={currentIndex === textArray.length - 1}>Next</button>
+        <button className={style.button} onClick={handleNext} disabled={currentIndex === textArray.length - 1 || isNextDisabled}>Next</button>
       </div>
     </div>
   );

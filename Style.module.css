@@ -37,7 +37,7 @@
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
   margin-top: 50px;
-  margin-bottom: -80vh; /* Adjust as needed */
+  margin-bottom: -40vh; /* Adjust as needed */
 }
 
 .button {
