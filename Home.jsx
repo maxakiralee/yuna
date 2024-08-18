@@ -7,7 +7,7 @@ function Home() {
   return (
     <div className={style.container}>
       <p className={style.text}>
-        use laptop! headphones on, volume up 😴🎶🔊
+        headphones on! 😴🎶🔊
       </p>
 
       <Link to="/yuna" className={style.startButtonLink}>
